@@ -1,0 +1,10 @@
+    1  kubectl create namespace namespace-a
+    2  kubectl create namespace namespace-b
+    3  kubectl get namespace
+    4  kubectl apply -f nginx-deployment.yaml
+    5  kubectl apply -f nginx-service.yaml
+    6  kubectl get all -n namespace-a
+    7  kubectl apply -f busybox.yaml
+    8  kubectl get pods -n namespace-b
+    9  kubectl exec -it busybox -n namespace-b -- sh
+    10 wget -qO- http://nginx-service.namespace-a.svc.cluster.local [Inside the BusyBox pod, use wget to access the NGINX service in namespace-a. Kubernetes DNS allows you to access the service using the format service-name.namespace.svc.cluster.local]

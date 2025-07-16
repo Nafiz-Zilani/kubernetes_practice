@@ -1,0 +1,9 @@
+    1  kubectl get namespace
+    2  kubectl create namespace my-namespace
+    3  kubectl get namespace
+    4  kubectl apply -f example-namespace.yaml
+    5  kubectl get namespace
+    6  kubectl apply -f mypod.yaml --namespace=yaml-namespace
+    8  kubectl get all --namespace=yaml-namespace
+    9  kubectl delete namespace yaml-namespace
+   10  kubectl get all --namespace=yaml-namespace
